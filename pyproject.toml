@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "final-transmission"
+version = "0.1.0"
+description = "AI-powered survival horror radio operator game"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+# AI & ML
+ollama = "^0.3.0"
+llama-index = "^0.10.0"
+llama-index-vector-stores-chroma = "^0.1.0"
+llama-index-llms-ollama = "^0.1.0"
+chromadb = "^0.4.0"
+# Databases
+pymongo = "^4.6.0"
+redis = "^5.0.0"
+motor = "^3.3.0"  # Async MongoDB driver
+# UI
+rich = "^13.7.0"
+# Data & Validation
+pydantic = "^2.5.0"
+pydantic-settings = "^2.1.0"
+# Utilities
+python-dotenv = "^1.0.0"
+# CLI
+typer = {extras = ["all"], version = "^0.9.0"}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.0"
+black = "^23.12.0"
+ruff = "^0.1.0"
+mypy = "^1.7.0"
+ipython = "^8.18.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+final-transmission = "src.main:app"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
